@@ -71,20 +71,20 @@ class GANNet(object):
             if self.category == 'Fashion-Mnist' or self.category == 'Mnist':
                 z = tf.reshape(z, [-1, self.z_size])
 
-                fc1 = tf.nn.leaky_relu(tf.layers.dense(inputs=z, units=1024), name='fc1')
+                fc1 = tf.layers.dense(inputs=z, units=1024, name='fc1')
 
-                fc1 = tf.contrib.layers.batch_norm(fc1, is_training=True)
+                fc1 = tf.nn.leaky_relu(tf.contrib.layers.batch_norm(fc1, is_training=True))
 
-                fc2 = tf.nn.leaky_relu(tf.layers.dense(inputs=fc1, units=6272), name='fc2')
+                fc2 = tf.layers.dense(inputs=fc1, units=6272, name='fc2')
 
-                fc2 = tf.contrib.layers.batch_norm(fc2, is_training=True)
+                fc2 = tf.nn.leaky_relu(tf.contrib.layers.batch_norm(fc2, is_training=True))
 
                 fc2 = tf.reshape(fc2, [self.batch_size, 7, 7, 128])
 
                 dc1 = deconv2d(fc2, (self.batch_size, self.img_size // 2, self.img_size // 2, 128), kernal=(5, 5),
                                name='dc1')
-                dc1 = tf.nn.leaky_relu(dc1)
                 dc1 = tf.contrib.layers.batch_norm(dc1, is_training=True)
+                dc1 = tf.nn.leaky_relu(dc1)
 
                 dc2 = deconv2d(dc1, (self.batch_size, self.img_size // 1, self.img_size // 1, 1), kernal=(5, 5),
                                name='dc2')
@@ -98,14 +98,13 @@ class GANNet(object):
             if self.category == 'Fashion-Mnist' or self.category == 'Mnist':
 
                 c1 = tf.nn.leaky_relu(conv2d(x, 1, name='c1'))
-                c1 = tf.contrib.layers.batch_norm(c1, is_training=True)
 
-                c2 = tf.nn.leaky_relu(conv2d(c1, 64, name='c2'))
-                c2 = tf.contrib.layers.batch_norm(c2, is_training=True)
+                c2 = tf.contrib.layers.batch_norm(conv2d(c1, 64, name='c2'), is_training=True)
+                c2 = tf.nn.leaky_relu(c2)
+                c2 = tf.reshape(c2, [self.batch_size, -1])
 
-                fc1 = tf.nn.leaky_relu(tf.layers.dense(inputs=c2, units=1024), name='fc1')
-                fc1 = tf.contrib.layers.batch_norm(fc1, is_training=True)
-                fc1 = tf.reshape(fc1, [self.batch_size, -1])
+                fc1 = tf.layers.dense(inputs=c2, units=1024, name='fc1')
+                fc1 = tf.nn.leaky_relu(tf.contrib.layers.batch_norm(fc1, is_training=True))
 
                 output = tf.layers.dense(inputs=fc1, units=1, name='fc2')
 
@@ -133,7 +132,7 @@ class GANNet(object):
 
         tf.get_default_graph().finalize()
 
-        latent_gen = np.random.normal(size=(len(data), self.z_size))
+        # latent_gen = np.random.normal(size=(len(data), self.z_size))
 
         for epoch in range(start + 1, self.epoch):
             num_batch = int(len(data) / self.batch_size)
@@ -141,7 +140,8 @@ class GANNet(object):
             g_losses = []
             for step in range(num_batch):
                 obs = data.NextBatch(step)
-                z = latent_gen[step * self.batch_size: (step + 1) * self.batch_size].copy()
+                # z = latent_gen[step * self.batch_size: (step + 1) * self.batch_size].copy()
+                z = np.random.normal(size=(self.batch_size, self.z_size))
 
                 d_loss, _ = sess.run([self.d_loss, self.d_optim], feed_dict={self.z: z, self.x: obs})
                 d_losses.append(d_loss)
@@ -151,12 +151,12 @@ class GANNet(object):
                 g_losses.append(g_loss)
                 # writer.add_summary(summary, global_step=epoch)
 
-                _ = sess.run(self.g_optim, feed_dict={self.z: z})
+                # _ = sess.run(self.g_optim, feed_dict={self.z: z})
 
 
             print(epoch, " dis Loss: ", np.mean(d_losses), " gen loss: ", np.mean(g_losses))
             if epoch % self.vis_step == 0:
-                self.visualize(saver, sess, len(data), epoch, latent_gen, data)
+                self.visualize(saver, sess, len(data), epoch, np.random.normal(size=(len(data), self.z_size)), data)
 
     def visualize(self, saver, sess, num_data, epoch, latent_gen, data):
         saver.save(sess, "%s/%s" % (self.checkpoint_dir, 'model.ckpt'), global_step=epoch)
