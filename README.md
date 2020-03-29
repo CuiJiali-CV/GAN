@@ -3,17 +3,15 @@
 <h1 align="center">Beyond The FRONTIER</h1>
 
 <p align="center">
+
+    <a href="https://www.tensorflow.org/">
+        <img src="https://img.shields.io/badge/Tensorflow-1.13-green" alt="Vue2.0">
+    </a>
     <a href="https://github.com/CuiJiali-CV/">
-        <img src="https://img.shields.io/badge/license-SIT-green" alt="MIT License" />
+        <img src="https://img.shields.io/badge/Author-JialiCui-blueviolet" alt="Author">
     </a>
-    <a href="https://vuejs.org/">
-        <img src="https://img.shields.io/badge/Tensorflow-2.0-green" alt="Vue2.0">
-    </a>
-    <a href="https://github.com/1042970366/">
-        <img src="https://img.shields.io/badge/author-JialiCui-blueviolet" alt="Author">
-    </a>
-    <a href="https://github.com/1042970366/">
-        <img src="https://img.shields.io/badge/email-cuijiali961224@gmail.com-blueviolet" alt="Author">
+    <a href="https://github.com/CuiJiali-CV/">
+        <img src="https://img.shields.io/badge/Email-cuijiali961224@gmail.com-blueviolet" alt="Author">
     </a>
 </p>
 
