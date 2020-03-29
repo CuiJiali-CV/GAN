@@ -32,11 +32,11 @@
 ## Structure of Network  
 * In fact, the leaky ReLu should switch place with BN, but that's it, LOL.
 * the code is correct, so don't worry about it.
-<br /><br /><br /><br />
+
 ### Generator
  ![Image text](https://github.com/CuiJiali-CV/cGAN/raw/master/Generator.png)
 ### Discriminator
-<br /><br /><br /><br />
+<br /><br />
  ![Image text](https://github.com/CuiJiali-CV/cGAN/raw/master/Discriminator.png)
 
 ## Results
