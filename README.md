@@ -3,7 +3,6 @@
 <h1 align="center">Beyond The FRONTIER</h1>
 
 <p align="center">
-
     <a href="https://www.tensorflow.org/">
         <img src="https://img.shields.io/badge/Tensorflow-1.13-green" alt="Vue2.0">
     </a>
