@@ -45,7 +45,7 @@
 
 <br /><br />
 ## Author
-<br /><br />
+
 ```javascript
 var iD = {
   name  : "Jiali Cui",
