@@ -3,7 +3,7 @@
 <h1 align="center">Beyond The FRONTIER</h1>
 
 <p align="center">
-    <a href="https://github.com/1042970366/">
+    <a href="https://github.com/CuiJiali-CV/">
         <img src="https://img.shields.io/badge/license-SIT-green" alt="MIT License" />
     </a>
     <a href="https://vuejs.org/">
