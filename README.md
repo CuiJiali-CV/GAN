@@ -22,7 +22,10 @@
 
 * Simple GAN code used for whenever I need
 <br /><br />
+## Quick Start
 
+* Run train.py and the result will be stored in output
+<br /><br />
 ## Version of Installment
 ### Tensorflow 1.13.1
 ### Numpy 1.18.2
