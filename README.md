@@ -14,19 +14,22 @@
     </a>
 </p>
 
-
+[Paper Here](https://arxiv.org/pdf/1406.2661.pdf)
+<br /><br />
 ## BackGround
 
 * Simple GAN code used for whenever I need
+* Because of some projects I am working on, the dataset is Mnist for now. But I will add other dataset soon.
+
 <br /><br />
 ## Quick Start
 
 * Run train.py and the result will be stored in output
 <br /><br />
 ## Version of Installment
-### Tensorflow 1.13.1
-### Numpy 1.18.2
-### Python 3.6.9  
+#### Tensorflow 1.13.1
+#### Numpy 1.18.2
+#### Python 3.6.9  
 
 <br /><br />
 ## Structure of Network  
