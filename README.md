@@ -33,18 +33,18 @@
 * In fact, the leaky ReLu should switch place with BN, but that's it, LOL.
 * the code is correct, so don't worry about it.
 <br /><br /><br /><br />
-<h2 align="center">Generator</h2>
+### Generator
  ![Image text](https://github.com/CuiJiali-CV/cGAN/raw/master/Generator.png)
+### Discriminator
 <br /><br /><br /><br />
-<h2 align="center">Discriminator</h2>
  ![Image text](https://github.com/CuiJiali-CV/cGAN/raw/master/Discriminator.png)
 
-##Results
+## Results
 <br /><br />
  ![Image text](https://github.com/CuiJiali-CV/cGAN/raw/master/Result.png)
 
 <br /><br />
-##Author
+## Author
 <br /><br />
 ```javascript
 var iD = {
