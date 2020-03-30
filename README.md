@@ -26,8 +26,9 @@
 
 <br /><br />
 ## Quick Start
-
 * Run train.py and the result will be stored in output
+* The hyper params are already set up in train.py.
+* The number of trainning images can be set up in loadData.py. Just simply change num to any number of images you want to train
 <br /><br />
 ## Version of Installment
 #### Tensorflow 1.13.1
