@@ -15,7 +15,7 @@ tf.flags.DEFINE_integer('Train_Epochs', 2000, 'Number of Epochs to train')
 tf.flags.DEFINE_integer('batch_size', 128, 'Batch size of training images')
 tf.flags.DEFINE_integer('z_size', 200, 'dimensions of latent factors')
 
-tf.flags.DEFINE_float('lr', 0.000, 'learning rate')
+tf.flags.DEFINE_float('lr', 0.0001, 'learning rate')
 
 tf.flags.DEFINE_string('category', 'Mnist', 'DataSet category')
 
