@@ -12,6 +12,9 @@
     <a href="https://github.com/CuiJiali-CV/">
         <img src="https://img.shields.io/badge/Email-cuijiali961224@gmail.com-blueviolet" alt="Author">
     </a>
+    <a href="https://www.stevens.edu/">
+        <img src="https://img.shields.io/badge/College-SIT-green" alt="Vue2.0">
+    </a>
 </p>
 
 [Paper Here](https://arxiv.org/pdf/1406.2661.pdf)
